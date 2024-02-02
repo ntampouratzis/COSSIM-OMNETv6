@@ -1,7 +1,7 @@
 # COSSIM-OMNETv6
-This is the OMNETWP files to work COSSIM with OMNET v6.0 and INET 4.4.1. Warning: 
+This is the OMNETWP files to work COSSIM with OMNET v6.0 and INET 4.4.1. 
 
-This implementation works only with Ethernet Switches (no micro-routers).
+<b>Warning: </b> This implementation works only with Ethernet Switches (no micro-routers).
 
 
 ## Notes 
