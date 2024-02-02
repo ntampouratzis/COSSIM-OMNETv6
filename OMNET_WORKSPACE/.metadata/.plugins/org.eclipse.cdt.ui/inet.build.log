@@ -1,0 +1,9 @@
+12:22:14 **** Clean-only build of configuration release for project inet ****
+make MODE=release -j4 clean 
+make[1]: Entering directory '/home/cossim/COSSIM/OMNETPP_COSSIM_workspace/OMNET_WORKSPACE/inet/src'
+*** CCACHE not detected - using precompiled headers
+Cleaning libINET.so
+make[1]: Leaving directory '/home/cossim/COSSIM/OMNETPP_COSSIM_workspace/OMNET_WORKSPACE/inet/src'
+
+12:22:17 Build Finished. 0 errors, 0 warnings. (took 3s.48ms)
+

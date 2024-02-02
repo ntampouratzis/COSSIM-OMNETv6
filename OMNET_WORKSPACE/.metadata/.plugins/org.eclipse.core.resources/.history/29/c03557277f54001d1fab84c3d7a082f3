@@ -1,0 +1,23 @@
+import inet.common.INETDefs;
+import inet.common.packet.chunk.Chunk;
+import inet.common.Units;
+
+cplusplus{{
+    #include <inet/common/packet/serializer/ChunkSerializer.h>
+    #include <inet/common/packet/serializer/SequenceChunkSerializer.h>
+}}
+namespace inet;
+
+
+
+
+class testPacket extends FieldsChunk
+{
+    int sourceAddress;
+    int destAddress;
+    unsigned int length;
+    uint64_t time;
+    uint8_t Payload[2048];
+    string name;
+}
+

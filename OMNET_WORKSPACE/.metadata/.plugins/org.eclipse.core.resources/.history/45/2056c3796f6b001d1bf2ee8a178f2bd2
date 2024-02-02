@@ -1,0 +1,28 @@
+[General]
+network = ARPTest
+total-stack = 2MiB
+#debug-on-errors = true
+
+[Config ARPTest]
+# tcp apps
+#*.configurator.config = xml("<config><interface hosts='**' address='10.0.x.x' netmask='255.255.255.0'/><autoroute metric='errorRate'/></config>")
+#*.configurator.optimizeRoutes = true
+*.configurator.addStaticRoutes = false
+#*.**.wlan[0].mac.maxQueueSize = 10
+
+
+ #ping app (host[0] pinged by others)
+*.micro_router0.numApps = 1
+*.micro_router0.app[0].typename = "PingApp"
+*.micro_router0.app[0].destAddr = "micro_router1"
+*.micro_router0.app[0].startTime = 0s
+
+# antenna
+*.host*.wlan[*].radio.antenna.typename = "DipoleAntenna"
+*.host*.wlan[*].radio.antenna.length = 20cm
+
+
+
+
+ 
+ 

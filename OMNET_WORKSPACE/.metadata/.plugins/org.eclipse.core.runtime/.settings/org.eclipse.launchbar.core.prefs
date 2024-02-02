@@ -1,0 +1,12 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:lans - mixed,org.eclipse.launchbar.core.descriptorType.default\:preemption,org.eclipse.launchbar.core.descriptorType.default\:lans,org.eclipse.launchbar.core.descriptorType.default\:dsdv,org.eclipse.launchbar.core.descriptorType.default\:idealwireless,org.eclipse.launchbar.core.descriptorType.default\:simulations (2),org.eclipse.launchbar.core.descriptorType.default\:vlan,org.eclipse.launchbar.core.descriptorType.default\:testing4_8_2022,org.eclipse.launchbar.core.descriptorType.default\:simulations (1),org.eclipse.launchbar.core.descriptorType.default\:aodv,org.eclipse.launchbar.core.descriptorType.default\:antenna,org.eclipse.launchbar.core.descriptorType.default\:lans - largeNet - LargeNet,org.eclipse.launchbar.core.descriptorType.default\:ieee80211,org.eclipse.launchbar.core.descriptorType.default\:interface,org.eclipse.launchbar.core.descriptorType.default\:lans - twoHosts - TwoHosts1,org.eclipse.launchbar.core.descriptorType.default\:cutthrough,org.eclipse.launchbar.core.descriptorType.default\:pinger,org.eclipse.launchbar.core.descriptorType.default\:simulations (3),org.eclipse.launchbar.core.descriptorType.default\:arptest,org.eclipse.launchbar.core.descriptorType.default\:simulations
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:lans\ -\ mixed/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:lans\ -\ mixed/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:preemption/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:preemption/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:simulations/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:testing4_8_2022/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:testing4_8_2022/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

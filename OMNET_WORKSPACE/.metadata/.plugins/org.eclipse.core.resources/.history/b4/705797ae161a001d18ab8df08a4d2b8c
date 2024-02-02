@@ -1,0 +1,8 @@
+import inet.common.INETDefs;
+import inet.common.packet.chunk.Chunk;
+namespace inet;
+
+class testPacket extends FieldsChunk
+{
+    double sensorValue;
+}

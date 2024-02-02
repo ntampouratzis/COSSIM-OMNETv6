@@ -1,0 +1,9 @@
+12:22:13 **** Clean-only build of configuration gcc-release for project HLANode ****
+make MODE=release clean 
+cd src && make clean
+make[1]: Entering directory '/home/cossim/COSSIM/OMNETPP_COSSIM_workspace/OMNET_WORKSPACE/HLANode/src'
+Cleaning libHLANode.so
+make[1]: Leaving directory '/home/cossim/COSSIM/OMNETPP_COSSIM_workspace/OMNET_WORKSPACE/HLANode/src'
+
+12:22:14 Build Finished. 0 errors, 0 warnings. (took 953ms)
+

@@ -1,0 +1,95 @@
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+// 
+
+package testingaodvonly.simulations;
+
+
+import inet.node.ethernet.EthernetSwitch;
+import ned.DatarateChannel;
+
+import inet.node.inet.Router;
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
+
+import inet.node.aodv.AodvRouter;
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
+import inet.node.contract.INetworkNode;
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
+import inet.node.ethernet.Eth100M;
+import inet.node.inet.Router;
+import inet.node.inet.StandardHost;
+import inet.node.base.NodeBase;
+import inet.node.inet.WirelessHost;
+import inet.node.wireless.AccessPoint;
+import inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadioMedium;
+
+simple Txc1
+{
+    gates:
+        inout gate;
+        
+}
+
+
+module CossimWirelessHostTower extends AodvRouter
+{
+    @display("i=device/antennatower");
+    //numRadios = default(1);
+   
+    	
+}
+
+
+module CossimWirelessHostMobile extends AodvRouter
+{
+    @display("i=device/cellphone");
+    //numRadios = default(1);
+    	
+}
+
+
+network ARPTest
+{
+     types:
+        channel ethline extends DatarateChannel
+        {
+            delay = 1ms;
+            datarate = 1000Mbps;
+        }
+   
+    submodules:
+	 micro_router0: CossimWirelessHostTower {
+       @display("p=322,137");
+     }
+
+     micro_router1: CossimWirelessHostMobile {
+          @display("p=432,182");
+     }
+
+     radioMedium: Ieee80211ScalarRadioMedium {
+  	    @display("p=64,350");
+     }
+
+    configurator: Ipv4NetworkConfigurator {
+            @display("p=65,90");
+    }
+     tic: Txc1;
+     toc: Txc1;
+     
+     connections:
+        tic <--> ethline <--> micro_router0.ethg++;;
+        toc <--> {  delay = 100ms; } <-- micro_router1.ethg++;;
+
+}
+

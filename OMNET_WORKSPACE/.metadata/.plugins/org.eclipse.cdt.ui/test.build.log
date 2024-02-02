@@ -1,0 +1,9 @@
+12:22:17 **** Clean-only build of configuration gcc-release for project test ****
+make MODE=release clean 
+cd src && make clean
+make[1]: Entering directory '/home/cossim/COSSIM/OMNETPP_COSSIM_workspace/OMNET_WORKSPACE/test/src'
+Cleaning libtest.so
+make[1]: Leaving directory '/home/cossim/COSSIM/OMNETPP_COSSIM_workspace/OMNET_WORKSPACE/test/src'
+
+12:22:18 Build Finished. 0 errors, 0 warnings. (took 849ms)
+

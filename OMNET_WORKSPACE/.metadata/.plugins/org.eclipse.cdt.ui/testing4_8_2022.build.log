@@ -1,0 +1,7 @@
+12:38:36 **** Build of configuration release for project testing4_8_2022 ****
+make MODE=release all 
+make: *** No rule to make target 'all'.  Stop.
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+
+12:38:37 Build Failed. 1 errors, 0 warnings. (took 621ms)
+

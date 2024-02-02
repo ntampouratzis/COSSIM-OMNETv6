@@ -1,0 +1,19 @@
+[General]
+network = ARPTest
+total-stack = 2MiB
+#debug-on-errors = true
+
+[Config ARPTest]
+# tcp apps
+#*.configurator.config = xml("<config><interface hosts='**' address='10.0.x.x' netmask='255.255.255.0'/><autoroute metric='errorRate'/></config>")
+#*.configurator.optimizeRoutes = true
+*.configurator.addStaticRoutes = false
+#*.**.wlan[0].mac.maxQueueSize = 10
+
+
+
+
+
+
+ 
+ 

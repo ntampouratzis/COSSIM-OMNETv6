@@ -1,0 +1,224 @@
+file 10098 1706869322                                           
+version 3
+run ARPTest-0-20240202-12:15:07-12918
+attr configname ARPTest
+attr datetime 20240202-12:15:07
+attr datetimef 20240202-121507
+attr experiment ARPTest
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ARPTest
+attr processid 12918
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../inet/images
+config *.configurator.addStaticRoutes false
+config *.micro_router*.wlan[0].radio.energyConsumerType "\"StateBasedEnergyConsumer\""
+config *.micro_router*.wlan[0].radio.energyConsumer.offPowerConsumption 0mW
+config *.micro_router*.wlan[0].radio.energyConsumer.sleepPowerConsumption 1mW
+config *.micro_router*.wlan[0].radio.energyConsumer.switchingPowerConsumption 1mW
+config *.micro_router*.wlan[0].radio.energyConsumer.receiverIdlePowerConsumption 2mW
+config *.micro_router*.wlan[0].radio.energyConsumer.receiverBusyPowerConsumption 5mW
+config *.micro_router*.wlan[0].radio.energyConsumer.receiverReceivingPowerConsumption 10mW
+config *.micro_router*.wlan[0].radio.energyConsumer.transmitterTransmittingPowerConsumption 100mW
+config *.micro_router*.wlan[0].radio.energyStorageType "\"IdealEnergyStorage\""
+config *micro_router*.wlan[0].typename AckingWirelessInterface
+config *micro_router*.wlan[0].bitrate 2Mbps
+config *.micro_router*.wlan[0].radioType "\"APSKScalarRadio\""
+config *.micro_router*.wlan[0].radio.transmitter.communicationRange 250m
+config *.micro_router*.wlan[0].radio.carrierFrequency 2GHz
+config *.micro_router*.wlan[0].radio.bandwidth 2MHz
+config *.micro_router*.wlan[0].radio.transmitter.power 1.4mW
+config *.micro_router*.wlan[0].radio.transmitter.preambleDuration 10us
+config *.micro_router*.wlan[0].radio.transmitter.headerBitLength 0b
+config *.micro_router*.wlan[0].radio.receiver.sensitivity -85dBm
+config *.micro_router*.wlan[0].radio.receiver.energyDetection -85dBm
+config *.micro_router*.wlan[0].radio.receiver.snirThreshold 4dB
+config ARPTest.micro_router0.routingTable.routingFile "\"whost0.mrt\""
+config ARPTest.micro_router1.routingTable.routingFile "\"whost1.mrt\""
+config network ARPTest
+config total-stack 2MiB
+
+vector 0 ARPTest.switch1.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 1 ARPTest.switch1.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 2 ARPTest.switch1.ethernet decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source decapPk
+attr title "packets decapsulated, packetBytes"
+vector 3 ARPTest.switch1.ethernet encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source encapPk
+attr title "packets encapsulated, packetBytes"
+vector 4 ARPTest.switch1.eth[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 5 ARPTest.switch1.eth[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 6 ARPTest.switch1.eth[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 7 ARPTest.switch1.eth[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 8 ARPTest.switch1.eth[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 9 ARPTest.switch1.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, packetBytes"
+vector 10 ARPTest.switch1.eth[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 11 ARPTest.switch1.eth[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 12 ARPTest.switch1.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 13 ARPTest.switch1.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 14 ARPTest.switch1.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 15 ARPTest.switch1.eth[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 16 ARPTest.switch1.eth[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 17 ARPTest.switch1.eth[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 18 ARPTest.switch1.eth[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 19 ARPTest.switch1.eth[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 20 ARPTest.switch1.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, packetBytes"
+vector 21 ARPTest.switch1.eth[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 22 ARPTest.switch1.eth[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 23 ARPTest.switch1.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 24 ARPTest.switch1.ieee8021q.qTagHeaderChecker droppedDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetDropped)
+attr title "dropped data rate"
+attr unit bps
+vector 25 ARPTest.switch1.ieee8021r.rTagHeaderChecker droppedDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetDropped)
+attr title "dropped data rate"
+attr unit bps
+0	8347 44 2341 2381 0.780000431 0.788000367 2 38 46 84 3560
+1	8391 44 2341 2381 0.780000431 0.788000367 2 38 46 84 3560
+2	8435 88 2342 2402 0.780000431 0.792000367 4 20 28 96 2368
+3	8523 88 2344 2404 0.780000431 0.792000367 4 20 28 96 2368
+4	8611 46 2345 2385 0.780000431 0.788000367 2 303 367 670 226498
+5	8657 122 2345 2524 0.1 0.837 9 0 6700 6700 44890000
+6	8779 42 2345 2385 0.780000431 0.788000367 2 0 0 0 0
+7	8821 46 2345 2385 0.780000431 0.788000367 2 303 367 670 226498
+8	8867 122 2345 2524 0.1 0.837 9 0 6700 6700 44890000
+9	8989 44 2345 2385 0.780000431 0.788000367 2 38 46 84 3560
+10	9033 44 2345 2385 0.780000431 0.788000367 2 0 0 0 0
+11	9077 44 2345 2385 0.780000431 0.788000367 2 0 0 0 0
+12	9121 46 2346 2386 0.780001006 0.788000942 2 64 64 128 8192
+13	9167 46 2361 2401 0.784000431 0.792000367 2 38 46 84 3560
+14	9213 46 2361 2401 0.784000431 0.792000367 2 38 46 84 3560
+15	9259 48 2365 2405 0.784000431 0.792000367 2 303 367 670 226498
+16	9307 131 2365 2524 0.1 0.837 9 0 6700 6700 44890000
+17	9438 44 2365 2405 0.784000431 0.792000367 2 0 0 0 0
+18	9482 48 2365 2405 0.784000431 0.792000367 2 303 367 670 226498
+19	9530 131 2365 2524 0.1 0.837 9 0 6700 6700 44890000
+20	9661 46 2365 2405 0.784000431 0.792000367 2 38 46 84 3560
+21	9707 44 2365 2405 0.784000431 0.792000367 2 0 0 0 0
+22	9751 44 2365 2405 0.784000431 0.792000367 2 0 0 0 0
+23	9795 46 2366 2406 0.784001006 0.792000942 2 64 64 128 8192
+24	9841 128 2524 2524 0.1 0.837 9 0 0 0 0
+25	9969 128 2524 2524 0.1 0.837 9 0 0 0 0
+

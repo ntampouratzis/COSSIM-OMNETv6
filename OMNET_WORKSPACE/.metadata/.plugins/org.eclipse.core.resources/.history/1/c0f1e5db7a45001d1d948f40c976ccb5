@@ -1,0 +1,132 @@
+// ----------------------------------------------------------------------------
+// COSSIM - Example of 4 simulated HLANodes using both Ethernet and Wireless networks.
+// Copyright (c) 2018, H2020 COSSIM.
+// Copyright (c) 2018, Telecommunications Systems Institute.
+// 
+// Author: Nikolaos Tampouratzis, ntampouratzis@isc.tuc.gr
+// ----------------------------------------------------------------------------
+
+package test.simulations;
+
+import HLANode.SyncNode;
+import HLANode.Txc0;
+import HLANode.Txc1;
+//import HLANode.Txc2;
+//import HLANode.Txc3;
+
+import inet.node.ethernet.EthernetSwitch;
+import ned.DatarateChannel;
+
+import inet.node.inet.Router;
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
+
+import inet.node.aodv.AodvRouter;
+//import inet.node.INetworkNode;
+// inet 4.3.9import inet.node.inet.INetworkNode;
+import inet.node.ethernet.Eth100M;
+import inet.node.inet.Router;
+import inet.node.inet.StandardHost;
+import inet.node.base.NodeBase;
+import inet.node.inet.WirelessHost;
+import inet.node.wireless.AccessPoint;
+import inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadioMedium;
+
+//import inet.common.IHook;
+
+
+
+
+
+module CossimWirelessHostTower extends AodvRouter
+{
+    @display("i=device/antennatower");
+    //numRadios = default(1);
+}
+
+
+module CossimWirelessHostMobile extends AodvRouter
+{
+    @display("i=device/cellphone");
+    //numRadios = default(1);
+}
+
+
+network ARPTest
+{
+    types:
+
+
+        channel ethline extends DatarateChannel
+        {
+            delay = 1ms;
+            datarate = 1000Mbps;
+        }
+    submodules:
+
+//       micro_router0: CossimWirelessHostTower {
+//          @display("p=322,137");
+//        }
+
+       //micro_router1: CossimWirelessHostMobile {
+        //    @display("p=432,182");
+       // }
+
+
+        //radioMedium: Ieee80211ScalarRadioMedium {
+         //   @display("p=64,350");
+       // }
+
+
+
+
+ //       switch1: EthernetSwitch {
+ //         @display("p=203,159"); 
+  //      }
+
+
+        configurator: Ipv4NetworkConfigurator {
+            //  assignDisjunctSubnetAddresses = true;
+            config = xmldoc("config1.xml");
+
+            @display("p=65,90");
+        }
+
+
+        node0: Txc0 {
+            parameters:
+                @display("i=device/server_l;p=382,58");
+        }
+        node1: Txc1 {
+            parameters:
+                @display("i=device/pc;p=382,250");
+        }
+//        node2: Txc2 {
+//            parameters:
+//                @display("i=device/pc;p=142,289");
+//        }
+//        node3: Txc3 {
+//            parameters:
+//                @display("i=device/pc;p=262,289");
+//        }
+
+        syncnode: SyncNode {
+            parameters:
+                @display("i=,red;p=55,250");
+        }
+
+    connections:
+        syncnode.out --> {  delay = 0ms; } --> syncnode.in;
+
+        //        node0.gate <--> ethline <--> micro_router0.ethg++;
+         //       node1.gate <--> ethline <--> micro_router1.ethg++;        
+        //        micro_router0.ethg++ <--> ethline <--> switch1.ethg++;
+        //
+        //
+         // 		node0.gate <--> ethline <--> switch1.ethg++;
+         //     	node1.gate <--> ethline <--> switch1.ethg++;
+
+		node0.gate <--> ethline <--> node1.gate;
+
+
+}
+

@@ -1,0 +1,5 @@
+[General]
+network = ARPtest
+cpu-time-limit = 60s
+#debug-on-errors = true
+
