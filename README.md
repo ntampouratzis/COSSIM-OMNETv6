@@ -18,7 +18,7 @@ Please refer to [COSSIM _framework](https://github.com/H2020-COSSIM/COSSIM_frame
 
 ## Build the COSSIM OMNET_WORKSPACE
 
-- Replace the folder `OMNET_WORKSPACE` inside the folder `$HOME/COSSIM/OMNETPP_COSSIM_workspace`.
+- Put the folder `OMNET_WORKSPACE` inside the folder `$HOME/COSSIM/OMNETPP_COSSIM_workspace`.
 
 - Select Project -> Clean -> Clean Projects Selected Below -> Select “INET” -> Select “Start a build immediately” -> Select “Build only the selected projects” -> Press “OK”
 - Select Project -> Clean -> Clean Projects Selected Below -> Select “HLANode” & “test” -> Select “Start a build immediately” -> Select “Build only the selected projects” -> Press “OK”
