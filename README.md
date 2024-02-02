@@ -11,7 +11,7 @@ COSSIM OMNETPP WORKSPACE implements a basic demo with 2 simulated nodes which ar
 
 - `INET 4.4.1` version which is required by COSSIM to model real networks. 
 - `HLANode` project which interconnects the OMNET++ with the cgem5 through HLA.
-- `test` project which contains a basic demo with 4 simulated nodes using both Ethernet and Wireless networks. 
+- `test` project which contains a basic demo with 2 simulated nodes using Ethernet. 
 
 Please refer to [COSSIM _framework](https://github.com/H2020-COSSIM/COSSIM_framework) repository for more details.
 
